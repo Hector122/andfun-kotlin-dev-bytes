@@ -18,12 +18,18 @@
 package com.example.android.devbyteviewer
 
 import android.app.Application
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 /**
  * Override application to setup background work via WorkManager
  */
 class DevByteApplication : Application() {
+
+    private val coroutineScope = CoroutineScope(Dispatchers.Default)
+
 
     /**
      * onCreate is called before the first screen is shown to the user.
@@ -34,5 +40,13 @@ class DevByteApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
+
+        delayInit()
+    }
+
+    private fun delayInit() {
+       coroutineScope.launch {
+           Thread.sleep(4000)
+       }
     }
 }

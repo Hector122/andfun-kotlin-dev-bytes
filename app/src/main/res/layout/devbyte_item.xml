@@ -32,7 +32,7 @@
             type="com.example.android.devbyteviewer.ui.VideoClick" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="0dp"
@@ -66,7 +66,8 @@
                 android:layout_marginTop="14dp"
                 app:layout_constraintStart_toStartOf="@+id/left_well"
                 app:layout_constraintTop_toBottomOf="@+id/video_thumbnail"
-                app:srcCompat="@drawable/ic_play_circle_outline_black_48dp" />
+                app:srcCompat="@drawable/ic_play_circle_outline_black_48dp"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/title"
@@ -127,5 +128,5 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 </layout>
